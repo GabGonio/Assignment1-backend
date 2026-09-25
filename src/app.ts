@@ -36,6 +36,10 @@ app.get("/", (req, res) => {
     res.send("Hello, world!");
 });
 
+/**
+ * Portfolio performance endpoint that calculates return on investment
+ * @returns JSON response with profit/loss, percentage change, and a performance summary
+ */
 app.get("/api/v1/portfolio/performance", (req, res) => {
     const initialInvestment = Number(req.query.initialInvestment);
     const currentValue = Number(req.query.currentValue);
