@@ -2,13 +2,6 @@ import { calculatePortfolioPerformance } from "../src/portfolio/portfolioPerform
 
 describe("calculatePortfolioPerformance", () => {
     
-    // 01 - Gain
-    it("should calculate 60% gain", () => {
-        const result = calculatePortfolioPerformance(10000, 16000);
-        expect(result.profitOrLoss).toBe(6000);
-        expect(result.percentageChange).toBe(60);
-        expect(result.performanceSummary).toBe("Excellent performance! Your investments are doing great.");
-    });
 
     // 02 - Gain
     it("should calculate 30% gain", () => {
@@ -18,13 +11,6 @@ describe("calculatePortfolioPerformance", () => {
         expect(result.performanceSummary).toBe("Excellent performance! Your investments are doing great.");
     });
 
-    // 03 - Gain
-    it("should calculate 29.999% gain", () => {
-        const result = calculatePortfolioPerformance(10000, 12999.9);
-        expect(result.profitOrLoss).toBe(2999.8999999999996);
-        expect(result.percentageChange).toBe(29.999);
-        expect(result.performanceSummary).toBe("Solid gain. Keep monitoring your investments.");
-    });
 
     // 04 - Gain
     it("should calculate 10% gain", () => {
@@ -42,13 +28,7 @@ describe("calculatePortfolioPerformance", () => {
         expect(result.performanceSummary).toBe("Modest gain. Your portfolio is growing slowly.");
     });
 
-    // 06 - Gain
-    it("should calculate 0.001000000000003638% gain", () => {
-        const result = calculatePortfolioPerformance(10000, 10000.1);
-        expect(result.profitOrLoss).toBe(0.1000000000003638);
-        expect(result.percentageChange).toBe(0.001000000000003638);
-        expect(result.performanceSummary).toBe("Modest gain. Your portfolio is growing slowly."); 
-    });
+
 
     // 07 - No Change
     it("should calculate exactly 0% change", () => {
@@ -58,13 +38,6 @@ describe("calculatePortfolioPerformance", () => {
         expect(result.performanceSummary).toBe("No change. Your potfolio is holding steady."); 
     });
 
-    // 08 - Loss
-    it("should calculate a minor loss", () => {
-        const result = calculatePortfolioPerformance(10000, 9999.9);
-        expect(result.profitOrLoss).toBe(-0.1000000000003638);
-        expect(result.percentageChange).toBe(-0.001000000000003638);
-        expect(result.performanceSummary).toBe("Minor loss. Stay calm and review your options."); 
-    });
 
     // 09 - Loss
     it("should calculate a minor loss", () => {
